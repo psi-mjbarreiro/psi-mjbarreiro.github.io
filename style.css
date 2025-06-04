@@ -1,0 +1,26 @@
+/* Boilerplate */
+
+*::before,
+*::after,
+* {
+	box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    /* Places underlines below the descenders */
+    text-underline-position: under;
+
+    /* Sets the thickness as a percentage of the font size */
+    text-decoration-thickness: 8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+        scroll-behavior: smooth;
+  }
+}
