@@ -13,7 +13,7 @@ img {
 
 a {
     /* Places underlines below the descenders */
-    text-underline-position: under;
+/*     text-underline-position: under; */
 
     /* Sets the thickness as a percentage of the font size */
     text-decoration-thickness: 8;
@@ -23,4 +23,84 @@ a {
   html {
         scroll-behavior: smooth;
   }
+}
+
+/* Variables */
+
+:root {
+  --bg-color-main: #ffefca;
+  --bg-color-aux: #65a161;
+  --color-main: #aa470a;
+}
+
+@font-face {
+    font-family: 'Luciole';
+    src:
+      url('fonts/Luciole-Regular.woff2') format('woff2'), /* Modern Browsers */
+      url('fonts/Luciole-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Luciole';
+    src:
+      url('fonts/Luciole-Italic.woff2') format('woff2'),
+      url('fonts/Luciole-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Luciole';
+    src:
+      url('fonts/Luciole-Bold.woff2') format('woff2'),
+      url('fonts/Luciole-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+body {
+  background-color: var(--bg-color-main);
+  color: var(--color-main);
+  font-family: 'Luciole', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+small {
+  padding-left: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* Grid */
+
+html {
+  height: 100dvh;
+}
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr 1fr auto;
+}
+
+main {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background-color: var(--bg-color-aux);
+  color: white;
+  margin: none;
 }
