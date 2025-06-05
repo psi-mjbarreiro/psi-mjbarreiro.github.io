@@ -3,7 +3,7 @@
 *::before,
 *::after,
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
@@ -69,8 +69,7 @@ body {
   padding: 0;
 }
 
-p,
-small {
+p {
   padding-left: 1rem;
 }
 
@@ -92,14 +91,37 @@ body {
   grid-template-rows: 1fr 1fr auto;
 }
 
+header {
+  grid-row: 1 / 2;
+}
+
 main {
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row: 2 / 3;
 }
 
 footer {
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row: 3 / 4;
+  display: grid;
+  grid:
+    [info-contact-start] 'info contact' auto [info-contect-end]
+    [copyright-start] 'copyright copyright' min-content [copyright-end]
+    / minmax(min-content, max-content) minmax(min-content, 1fr);
+}
+
+.info {
+  grid-area: info;
+  padding-right: 1rem;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.copyright {
+  grid-area: copyright;
+}
+
+footer {
   background-color: var(--bg-color-aux);
   color: white;
   margin: none;
