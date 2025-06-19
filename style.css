@@ -7,21 +7,17 @@
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 a {
-    /* Places underlines below the descenders */
-/*     text-underline-position: under; */
-
-    /* Sets the thickness as a percentage of the font size */
-    text-decoration-thickness: 8;
+  text-decoration-thickness: 8;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
-        scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 }
 
@@ -88,7 +84,7 @@ html {
 body {
   min-height: 100dvh;
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: 1fr 2fr auto;
 }
 
 header {
@@ -97,7 +93,32 @@ header {
 
 main {
   grid-row: 2 / 3;
+  display: grid;
+  grid:
+    [greeting-start] 'greeting portrait' [greeting-end]
+    [introduction-start] 'introduction portrait' [introduction-end]
+    / minmax(min-content, 1fr) minmax(300px, max-content);
 }
+
+
+.greeting {
+  grid-area: greeting;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+
+.introduction {
+  grid-area: introduction;
+}
+
+.portrait {
+  grid-column: 2 / 3;
+  grid-area: portrait;
+  place-self: start end;
+  padding: 2em;
+}
+
 
 footer {
   grid-row: 3 / 4;
