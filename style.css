@@ -131,16 +131,66 @@ body {
 }
 
 header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  width: 100%;
   grid-row: 1 / 2;
+  background-color: var(--color-main);
+
+  a:link {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #FFFFFF;
+  }
+
+  a:focus {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #FFFFFF;
+  }
+
+  a:active {
+    color: #FFFFFF;
+  }
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 2rem;
+  padding-left: 1rem;
+
+  li {
+    float: left;
+    padding-right: 1.5rem;
+    text-align: center;
+  }
 }
 
 main {
   grid-row: 2 / 3;
   display: grid;
   grid:
+    [title-start] 'title title' [title-end]
     [introduction-start] 'introduction portrait' [introduction-end]
     [about-me-start] 'about-me about-me' [about-me-end]
     / minmax(min-content, 1fr) minmax(300px, max-content);
+}
+
+.title {
+  grid-area: title;
 }
 
 .introduction {
