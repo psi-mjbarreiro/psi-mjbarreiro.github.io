@@ -118,22 +118,19 @@ h1 {
   font-size: 3rem;
 }
 
-/* Grid */
+/* Layout */
 
 html {
-  height: 100dvh;
+/*   height: 100dvh; */
 }
 
 body {
-  min-height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+/*   min-height: 100dvh; */
 }
 
 header {
   position: sticky;
   z-index: 10;
-  top: 0;
   width: 100%;
   grid-row: 1 / 2;
   background-color: var(--color-main);
@@ -171,6 +168,7 @@ nav ul {
   justify-content: left;
   height: 2rem;
   padding-left: 1rem;
+  margin-top: 0;
 
   li {
     float: left;
@@ -180,54 +178,45 @@ nav ul {
 }
 
 main {
-  grid-row: 2 / 3;
-  display: grid;
-  grid:
-    [title-start] 'title title' [title-end]
-    [introduction-start] 'introduction portrait' [introduction-end]
-    [about-me-start] 'about-me about-me' [about-me-end]
-    / minmax(min-content, 1fr) minmax(300px, max-content);
 }
 
 .title {
-  grid-area: title;
 }
 
 .introduction {
-  grid-area: introduction;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+  div {
+    flex: 0 1 auto;
+    
+    p {
+      max-width: 75ch;
+    }
+  }
 }
 
 .portrait {
-  grid-column: 2 / 3;
-  grid-area: portrait;
-  place-self: start end;
-  padding-left: 2em;
+  flex: 0 0 auto;
 }
 
 .about-me {
-  grid-area: about-me;
 }
 
 footer {
-  grid-row: 3 / 4;
-  display: grid;
-  grid:
-    [info-contact-start] 'info contact' auto [info-contect-end]
-    [copyright-start] 'copyright copyright' min-content [copyright-end]
-    / minmax(min-content, max-content) minmax(min-content, 1fr);
+  display: flex;
 }
 
 .info {
-  grid-area: info;
   padding-right: 1rem;
 }
 
 .contact {
-  grid-area: contact;
 }
 
 .copyright {
-  grid-area: copyright;
 }
 
 footer {
