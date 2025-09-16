@@ -186,41 +186,48 @@ main {
 .introduction {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-end;
+  text-align: justify;
+  padding: 1% 0 5% 0;
   
   div {
-    flex: 0 1 auto;
-    
-    p {
-      max-width: 75ch;
-    }
+    flex: 0.5 1 60ch;
+    padding-right: 1ch;
   }
-}
-
-.portrait {
-  flex: 0 0 auto;
+  
+  .portrait {
+    padding-top: 1rem;
+  }
 }
 
 .about-me {
 }
 
 footer {
-  display: flex;
+  background-color: var(--bg-color-aux);
+  color: white;
+  
+  p {
+    display: inline-block;
+  }
+  
+  .copyright {
+    display: block;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+  }
+  
+  & > *:not(:first-child) {
+    margin-top: 0;
+  }
 }
 
 .info {
-  padding-right: 1rem;
+  
 }
 
 .contact {
 }
 
-.copyright {
-}
 
-footer {
-  background-color: var(--bg-color-aux);
-  color: white;
-  margin: none;
-}
